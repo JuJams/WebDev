@@ -1,0 +1,27 @@
+.wrapper {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .wrapper > * {  /* * means all children of the parent element */
+    margin: 20px;
+  }
+  
+  .box {
+    border: 5px solid darkblue;
+    width: 200px;
+    height: 200px;
+  }
+  
+  img {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .cover {
+    object-fit: cover;
+  }
+  
+  .contain {
+    object-fit: contain;
+  }
