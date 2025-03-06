@@ -1,8 +1,8 @@
 - Transform means the positions and the directions
 - Translate function moves an element from its current position (x,y)
-- Rotate function uses degrees and rotates it clock wise -> right or anti -> left
+- Rotate function uses degrees and rotates it clockwise -> right or anti -> left
 - Scale function increases/decreases the size of an element
 - Skew function is an element along the x and y axis -> can create a paralellogram
-- Matrix function can combine all the 2D fucntions into one (the one's above)
+- Matrix function can combine all the 2D functions into one (the one's above)
 
 
