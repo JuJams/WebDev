@@ -27,3 +27,5 @@
     1. space-around → Items are evenly spaced, with half-size spaces at edges.
     1. space-evenly → Items are evenly spaced including edges.
 
+# Changes Made
+- Made changes to paid.html on the jujams.github.io to be media responsive and updated the display types
