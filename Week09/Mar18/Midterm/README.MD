@@ -47,7 +47,8 @@ This is my **personal portfolio website**, showcasing my **projects, blogs, resu
 
 One of the **most useful snippets** I worked on was the **gradient background styling** for the sections:
 
-     
+
+- I used MDN web docs for reference: [https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient]     
     background: linear-gradient(135deg, #f9e1e0 10%, #feadb9 100%);
 This allows smooth color transitions, improving the overall aesthetics. I used W3Schools Gradient Guide for reference.
 
