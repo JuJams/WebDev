@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spring Break in Puerto Rico</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#activities">Activities</a>
+    <a href="#js-demo">Fun Fact</a>
+  </nav>
+
+
+  <header class="hero" id="home">
+    <h1>Spring Break in Puerto Rico</h1>
+    <p> A peaceful vacation needed to break from the world</p>
+  </header>
+
+
+  <section class="about" id="about">
+    <h2>About My Trip</h2>
+    <p>
+      I spent an amazing spring break in Puerto Rico with my friends.
+      From the colorful streets of Old San Juan to relaxing on sunny beaches and hiking in rainforests, every moment was unforgettable.
+    </p>
+  </section>
+
+
+  <section class="gallery" id="gallery">
+    <h2>Trip Gallery</h2>
+    <div class="gallery-container">
+      <div class="gallery-item">
+        <img src="san_juan.jpg" alt="Old San Juan" />
+      </div>
+      <div class="gallery-item">
+        <img src="beach.jpg" alt="Beach Day" />
+      </div>
+      <div class="gallery-item">
+        <img src="rainforest.jpg" alt="Rainforest Hike" />
+      </div>
+    </div>
+  </section>
+
+  <section class="activities" id="activities">
+    <h2>Activities</h2>
+    <div class="activities-container">
+      <div class="activity">
+        <h3>Beach Day</h3>
+        <p>We all made a beach snow man and took a bunch of polaroids. Stepped way too many times on sea moss (I am crying)</p>
+      </div>
+      <div class="activity">
+        <h3>City Exploration</h3>
+        <p>Old San Juan was so pretty and colorful. The fort at the end of the island was beautiful!</p>
+      </div>
+      <div class="activity">
+        <h3>Rainforest Hike</h3>
+        <p>Walked in mud and did a few high dives</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="js-demo" id="js-demo">
+    <h2>Fun Fact</h2>
+    <p id="hidden-content" style="display: none;">
+      Even though a lot of poeple eat meat, I could find a bunch of yummy vegetarian food in Puerto Rico.
+    </p>
+    <button onclick="document.getElementById('hidden-content').style.display='block'">Show</button>
+    <button onclick="document.getElementById('hidden-content').style.display='none'">Hide</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Spring Break Adventures</p>
+  </footer>
+</body>
+</html>
