@@ -1,0 +1,57 @@
+#name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d016e1;
+}
+
+#name:hover {
+    color: #f49696;
+}
+
+#car {
+    color: #a6e106
+}
+
+#car:hover {
+    color: #f3c4d9;
+}
+
+#output {
+    font-size: 28px;
+    color: #eeff70;
+}
+
+#output:hover {
+    color: #a8eed7;
+}
+
+#demo {
+    font-size: 24px;
+    color: #e77878;
+}
+#demo:hover {
+    color: #a0faa5;
+}
+
+#math {
+    font-size: 24px;
+    color: #9978e7;
+}
+#math:hover {
+    color: #d3faa0;
+}
+
+#myButton {
+    background-color: #ff61b0;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#myButton:hover {
+    background-color: #9bd0fb;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
