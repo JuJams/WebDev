@@ -8,4 +8,7 @@
 - Variables are case sensitive
 - Idnetifiers are the variables themselves
 - The equal to sign is an assignment operator == 
-- 
+
+## April 3 Notes
+- A number guessing game
+- A group project

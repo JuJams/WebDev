@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+        <style>
+            html{
+                font-family: sans-serif;
+                background-color: rgb(254, 173, 173);
+            }
+            body{
+                width: 50%;
+                max-width: 800px;
+                min-width: 480px;
+                margin: 0 auto;
+            }
+            .form input[type="string"]{
+                width: 200px;
+            }
+            .lastResult{
+                color: white;
+                padding: 3px;
+            }
+            .score {
+                margin-top: 20px;
+                padding: 10px;
+                background-color: #f0f0f0;
+                border-radius: 5px;
+            }
+            .playerSubmit {
+                margin-top: 10px;
+                padding: 10px 20px;
+                background-color: #4a67cf;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .playerSubmit:hover {
+                background-color: #dc8630;
+            }
+            #resetButton {
+                margin-top: 10px;
+                padding: 10px 20px;
+                background-color: #f43636;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            #resetButton:hover {
+                background-color: #54ea68;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Rock! Paper! Scissors!</h1>
+        <p>Let's play Rock Paper Scissors! Good luck!</p>
+        <div class="form">
+            <label for="player">Choose your weapon: </label>
+            <input
+                type="string"
+                required
+                id="player"
+                class="player"
+            />
+            <input type="submit" value="Submit choice" class="playerSubmit" />
+        </div>
+        <div class="result">
+            <p id="playerOutput"></p>
+            <p id="computerOutput"></p>
+            <p id="resultOutput"></p>
+        </div>
+        <div class="score">
+            <p>Score:</p>
+            <p id="playerScore">Player: 0</p>
+            <p id="computerScore">Computer: 0</p>
+            <p id="tieScore">Ties: 0</p>
+        </div>
+        <button id="resetButton">Play Again</button>
+
+        <script>
+            let player = document.getElementById("player");
+            let playerOutput = document.getElementById("playerOutput");
+            let computerOutput = document.getElementById("computerOutput");
+            let resultOutput = document.getElementById("resultOutput");
+            let playerChoice;
+            let computerChoice;
+            let playerScore = 0;
+            let computerScore = 0;
+            let tieScore = 0;
+            let playerScoreOutput = document.getElementById("playerScore");
+            let computerScoreOutput = document.getElementById("computerScore");
+            let tieScoreOutput = document.getElementById("tieScore");
+            let resetButton = document.getElementById("resetButton");
+            let submitButton = document.querySelector(".playerSubmit");
+            
+            function getComputerChoice() {
+                const choices = ["rock", "paper", "scissors"];
+                const randomIndex = Math.floor(Math.random() * 3);
+                return choices[randomIndex];
+            }
+            
+            function determineWinner(playerChoice, computerChoice) {
+                if (playerChoice === computerChoice) {
+                    return "tie";
+                } 
+                else if (
+                    (playerChoice === "rock" && computerChoice === "scissors") ||
+                    (playerChoice === "paper" && computerChoice === "rock") ||
+                    (playerChoice === "scissors" && computerChoice === "paper")
+                ) {
+                    return "player";
+                } 
+                else {
+                    return "computer";
+                }
+            }
+            
+            function updateScore(result) {
+                if (result === "player") {
+                    playerScore++;
+                    playerScoreOutput.textContent = `Player: ${playerScore}`;
+                } 
+                else if (result === "computer") {
+                    computerScore++;
+                    computerScoreOutput.textContent = `Computer: ${computerScore}`;
+                } 
+                else {
+                    tieScore++;
+                    tieScoreOutput.textContent = `Ties: ${tieScore}`;
+                }
+            }
+            
+            function displayResult(playerChoice, computerChoice, result) {
+                playerOutput.textContent = `You chose: ${playerChoice}`;
+                computerOutput.textContent = `Computer chose: ${computerChoice}`;
+                if (result === "player") {
+                    resultOutput.textContent = "You win!";
+                    resultOutput.style.color = "green";
+                } else if (result === "computer") {
+                    resultOutput.textContent = "Computer wins!";
+                    resultOutput.style.color = "red";
+                } else {
+                    resultOutput.textContent = "It's a tie!";
+                    resultOutput.style.color = "blue";
+                }
+            }
+            
+            
+            function resetGame() {
+                player.value = "";
+                playerOutput.textContent = "";
+                computerOutput.textContent = "";
+                resultOutput.textContent = "";
+                playerScore = 0;
+                computerScore = 0;
+                tieScore = 0;
+                playerScoreOutput.textContent = "Player: 0";
+                computerScoreOutput.textContent = "Computer: 0";
+                tieScoreOutput.textContent = "Ties: 0";
+            }
+
+          
+            submitButton.addEventListener("click", function() {
+                playerChoice = player.value;
+                computerChoice = getComputerChoice();
+                const result = determineWinner(playerChoice, computerChoice);
+                displayResult(playerChoice, computerChoice, result);
+                updateScore(result);
+            });
+
+            resetButton.addEventListener("click", resetGame);
+
+        </script>
+    </body>
+</html>
