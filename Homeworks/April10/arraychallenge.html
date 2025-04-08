@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Arrays: Task 1</title>
+    <h1>Arrays: Task 1</h1>
+    <style>
+      p {
+        color: rgb(234, 45, 86);
+        margin: 0.5em 0;
+      }
+      #output {
+        color: blue;
+      }
+      #output2 {
+        color: red;
+      }
+      #output3 {
+        color: green;
+      }
+      #output4 {
+        color: orange;
+      }
+        .preview {
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 0 10px rgba(206, 13, 13, 0.1);
+        }
+        .preview p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+      .preview span {
+            font-weight: bold;
+        }
+      body {
+        background-color: #c0f2f6;
+        font-family: "Open Sans Light",Helvetica,Arial,sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+    <p>Starting Array: <span id="output"> </span></p>
+    <p>Updated Array 1 (After changing index 1): <span id="output2"> </span></p>
+    <p>Updated Array 2 (After changing index 2): <span id="output3"> </span></p>
+    <p>Final Array (After adding to the start): <span id="output4"> </span></p>
+    </section>
+
+  </body>
+  <script>
+    // Add your code here
+    let myArray = ["pizza", "pasta", "burrata"];
+    output.innerHTML = myArray;
+    myArray[0] = "tacos";
+    output2.innerHTML = myArray;
+    myArray[1] = "burrito";
+    output3.innerHTML = myArray;
+    myArray.unshift("sushi");
+    output4.innerHTML = myArray;
+
+    // Don't edit the code below here!
+    const section = document.querySelector('section');
+    let para1 = document.createElement('p');
+    para1.textContent = `Array: ${ myArray }`;
+    section.appendChild(para1);
+  </script>
+
+</html>
