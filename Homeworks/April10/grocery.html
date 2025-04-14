@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sanju's Grocery List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8cdcd;
+      padding: 40px;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      text-align: center;
+      color: #fb460a;
+    }
+    #groceryList {
+      max-width: 600px;
+    }
+    .grocery-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 15px;
+    }
+    .grocery-item img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+    .grocery-item-name {
+      width: 100px;
+      font-weight: bold;
+    }
+    .grocery-item-qty {
+      min-width: 100px;
+    }
+    button {
+      padding: 6px 12px;
+      background-color: #f0a76c;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c64045;
+    }
+    p {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      font-style: italic;
+      color: #080101;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>My Grocery List</h1> 
+    <p>This is my usual grocery list and I go to trader joes to buy all of them</p>
+    <div id="groceryList"></div>
+  </div>
+<script>
+  const groceries = [
+    { name: "Apples", image: "images/apple.png" },
+    { name: "Bread", image: "images/bread.png" },
+    { name: "Milk", image: "images/milk.png" },
+    { name: "Eggs", image: "images/eggs.png" },
+    { name: "Carrots", image: "images/carrots.png" },
+    { name: "Chicken", image: "images/chicken.png" },
+    { name: "Rice", image: "images/rice.png" },
+    { name: "Potatoes", image: "images/potatoes.png" },
+    { name: "Tomatoes", image: "images/tomatoes.png" },
+    { name: "Bananas", image: "images/bananas.png" },
+    { name: "Oranges", image: "images/oranges.png" },
+    { name: "Grapes", image: "images/grapes.png" },
+    { name: "Cheese", image: "images/cheese.png" },
+    { name: "Yogurt", image: "images/yogurt.png" },
+    { name: "Butter", image: "images/butter.png" },
+    { name: "Veggie chips", image: "images/veggie-chips.png" },
+  ];
+
+  const list = document.getElementById("groceryList");
+
+  groceries.forEach((item, index) => {
+    const container = document.createElement("div");
+    container.className = "grocery-item";
+    const img = document.createElement("img");
+    img.src = item.image;
+    img.alt = item.name;
+    const name = document.createElement("p");
+    name.textContent = item.name;
+    name.className = "grocery-item-name";
+    const quantity = document.createElement("p");
+    quantity.id = `qty-${index}`;
+    quantity.textContent = "Quantity: 0";
+    quantity.className = "grocery-item-qty";
+    const button = document.createElement("button");
+    button.textContent = "+";
+    button.onclick = () => incrementQuantity(index);
+    container.appendChild(img);
+    container.appendChild(name);
+    container.appendChild(quantity);
+    container.appendChild(button);
+    list.appendChild(container);
+  });
+
+  const quantities = Array(groceries.length).fill(0);
+  function incrementQuantity(index) {
+    quantities[index]++;
+    document.getElementById(`qty-${index}`).textContent =
+      "Quantity: " + quantities[index];
+  }
+</script>
+</body>
+</html>
