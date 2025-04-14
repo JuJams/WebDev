@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello World</title>
+        
+    </head>
+    <body>
+
+        <!-- Task 1 -->
+        <h1>Task 1: Hello World!</h1>
+        <div id="output">This is the original text.</div>
+        <script src="tasks.js"></script>
+
+        <!-- Task 4 -->
+        <h1>Task 4: Temperature Converter</h1>
+        <button onclick="fahrenheitToCelsius(100)">Convert 100°F to °C</button>
+        <button onclick="celsiusToFahrenheit(37)">Convert 37°C to °F</button>
+
+        <!-- Task 5 -->
+        <h1>Task 6: Light Switch</h1>
+        <p id="lightStatus">Light is ON</p>
+        <button onclick="toggleLight()">Toggle Light</button>
+
+        <!-- Task 7 -->
+        <h1>Task 7: Counting</h1>
+        <div id="countOutput"></div>
+        <button onclick="countByTwo(20)">Count by 2 till 20</button>
+    </body>
+</html>
+<style>
+        body {
+            padding: 20px;
+            background-color: #db9d9d;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #e9ef30;
+            font-size: 20px;
+        }
+        #output {
+            font-size: 18px;
+            color: #0b0601;
+            margin-top: 20px;
+        }
+        p {
+            font-size: 19px;
+            color: #5a73f1;
+        }
+        button {
+            background-color: #b3dde9;
+            border: none;
+            color: rgb(6, 6, 6);
+            padding: 15px 32px;
+            text-align: center;
+            border-radius: 16px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1e70e2;
+        }
+</style>
