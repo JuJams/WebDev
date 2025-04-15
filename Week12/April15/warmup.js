@@ -26,6 +26,6 @@ for (let i = 0; i < birds.length; i++) {
 // 5. Reversed Loop Error
 const out5 = document.getElementById("example5");
 const nums = [10, 20, 30, 40];
-for (let i = 0; i <= nums.length; i++) {
+for (let i = 0; i <= nums.length-1; i++) {
   out5.innerHTML += `Number: ${nums[i]}<br>`;
 }
