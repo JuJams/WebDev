@@ -68,7 +68,7 @@ Here are the key front-end concepts I plan to use:
 [ CONTACT SECTION ]
 --------------------------------------------------
 | Email Icon [clickable]  | LinkedIn Icon         |
-| Optional: fun CTA like "Let's build cool stuff?"|
+| CTA like "Let's build cool stuff?"|
 --------------------------------------------------
 
 [ FOOTER ]
