@@ -1,9 +1,14 @@
+// Theme toggle and icon switching
 const toggleBtn = document.getElementById('themeToggle');
 const body = document.body;
 const sun = document.getElementById('sunIcon');
 const moon = document.getElementById('moonIcon');
+
+// I made this to let users toggle between light and dark mode
 toggleBtn.addEventListener('click', () => {
   body.classList.toggle('dark');
+
+  // Switch sun/moon visibility
   if (body.classList.contains('dark')) {
     sun.style.display = 'none';
     moon.style.display = 'block';
@@ -11,9 +16,12 @@ toggleBtn.addEventListener('click', () => {
     sun.style.display = 'block';
     moon.style.display = 'none';
   }
+
+  // Update background and text for new theme
   updateCarousel(current); 
 });
 
+// Light theme carousel data array
 const lightSlides = [
   {
     bg: "#CDB4DB",
@@ -42,6 +50,7 @@ const lightSlides = [
   }
 ];
 
+// Dark theme carousel data array
 const darkSlides = [
   {
     bg: "#A4243B",
@@ -70,16 +79,19 @@ const darkSlides = [
   }
 ];
 
+// DOM elements for content + controls
 let current = 0;
 const title = document.querySelector('.carousel-title');
 const subtitle = document.querySelector('.carousel-subtitle');
 const dots = document.querySelectorAll('.dot');
 const rightSection = document.querySelector('.right');
 
+// Return the current theme’s slide set
 function getSlides() {
   return document.body.classList.contains('dark') ? darkSlides : lightSlides;
 }
 
+// I update the carousel based on current slide index
 function updateCarousel(index) {
   const slides = getSlides();
   current = index % slides.length;
@@ -88,18 +100,28 @@ function updateCarousel(index) {
   subtitle.textContent = slide.subtitle;
   rightSection.style.backgroundColor = slide.bg;
 
+  // Active dot style
   dots.forEach(dot => dot.classList.remove('active'));
   dots[current].classList.add('active');
 }
 
+// Initialize carousel
 updateCarousel(current);
+
+// Rotate carousel every 10 seconds
 setInterval(() => {
   updateCarousel((current + 1) % getSlides().length);
 }, 10000);
 
+// Manual dot navigation
 dots.forEach(dot => {
   dot.addEventListener('click', () => {
     const index = parseInt(dot.dataset.index);
     updateCarousel(index);
   });
 });
+
+// I used MDN to understand how classList and event listeners work:
+// classList → https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+// addEventListener → https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+

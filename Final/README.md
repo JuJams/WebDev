@@ -7,7 +7,7 @@
 This is a creative and interactive personal portfolio website built from scratch using HTML, CSS, and JavaScript. The site features five main pages: Landing, About Me, Skills, Projects, and Contact. Each section is uniquely designed to showcase different skills and work while integrating fun, animated, and responsive elements.
 
 - **Landing page** uses a sun-and-soil metaphor with animations for a personal introduction.
-- **About page** features a typewriter aniamtion with a flexbox layout for a clean and modern look.
+- **About page** features a typewriter aniamtion with a grid layout for a clean and modern look.
 - **Skills page** is styled as a Rubik’s Cube, with colorful interactive tiles and tooltip-style hovers.
 - **Projects page** uses clickable ice cubes that "spill" into project overlays.
 - **Contact page** features a floating bottle animation over a looping waves video background.

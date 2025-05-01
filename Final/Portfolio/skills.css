@@ -8,8 +8,9 @@ body {
   
 html, body {
     overflow: hidden;
-
 }
+
+/* Logo styling (top left corner) */
 .logo {
     position: absolute;
     top: 30px;
@@ -24,15 +25,16 @@ html, body {
     text-decoration: none;
 }
   
-  .logo:hover {
+.logo:hover {
     color: #0199ff;
-  }
+}
   
-  body.dark .logo {
+body.dark .logo {
     color: #FFC8DD;
-  }
-  
-  .top-nav {
+}
+
+/* Navigation bar (top right corner) */
+.top-nav {
     position: absolute;
     top: 30px;
     right: 40px;
@@ -40,30 +42,30 @@ html, body {
     display: flex;
     gap: 24px;
     z-index: 10;
-  }
+}
   
-  .top-nav a {
+.top-nav a {
     color: #ffffff;
     text-decoration: none;
     font-weight: 500;
     font-size: 16px;
     transition: border-bottom 0.2s ease;
     border-bottom: 2px solid transparent;
-  }
+}
   
-  .top-nav a.active {
+.top-nav a.active {
     border-bottom: 2px solid currentColor;
-  }
+}
   
-  .top-nav a:hover {
+.top-nav a:hover {
     border-bottom: 2px solid currentColor;
-  }
+}
   
-  body.dark .top-nav a {
+body.dark .top-nav a {
     color: #ffffff;
-  }
+}
 
-
+/* Centered 3x3 grid of skill tiles */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 100px);
@@ -78,6 +80,7 @@ html, body {
   z-index: 5;
 }
 
+/* Basic skill tile style */
 .skill-tile {
   width: 100px;
   height: 100px;
@@ -90,6 +93,7 @@ html, body {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+/* Hidden label inside each tile */
 .skill-tile span {
   position: absolute;
   top: 0;
@@ -109,47 +113,32 @@ html, body {
   margin-bottom: 8px;
 }
 
+/* Change label color to black for lighter backgrounds */
 .skill-tile.css span,
-.skill-tile.shopify span, .skill-tile.skill-tile.react span {
+.skill-tile.shopify span,
+.skill-tile.react span {
   color: #000000;
 }
 
+/* Show label on hover */
 .skill-tile:hover span {
   opacity: 1;
 }
 
-.skill-tile.html:hover {
-  background-color: #009B48;
-}
-.skill-tile.css:hover {
-  background-color: #ffd500;
-}
-.skill-tile.javascript:hover {
-  background-color: #0046ad;
-}
-.skill-tile.react:hover {
-  background-color: #ffffff;
-}
-.skill-tile.figma:hover {
-  background-color: #009B48;
-}
-.skill-tile.shopify:hover {
-  background-color: #ffd500;
-}
-.skill-tile.liquid:hover {
-  background-color: #ff5800;
-}
-.skill-tile.github:hover {
-  background-color: #0046ad;
-}
-.skill-tile.ux:hover {
-  background-color: #b71234;
-}
+/* Hover background color highlights */
+.skill-tile.html:hover { background-color: #009B48; }
+.skill-tile.css:hover { background-color: #ffd500; }
+.skill-tile.javascript:hover { background-color: #0046ad; }
+.skill-tile.react:hover { background-color: #ffffff; }
+.skill-tile.figma:hover { background-color: #009B48; }
+.skill-tile.shopify:hover { background-color: #ffd500; }
+.skill-tile.liquid:hover { background-color: #ff5800; }
+.skill-tile.github:hover { background-color: #0046ad; }
+.skill-tile.ux:hover { background-color: #b71234; }
 
-
-
+/* Initial background color for each tile */
 .skill-tile.html { background-color: #ff5800; }
-.skill-tile.css { background-color: #ffffff;}
+.skill-tile.css { background-color: #ffffff; }
 .skill-tile.javascript { background-color: #b71234; }
 .skill-tile.react { background-color: #ffd500; }
 .skill-tile.figma { background-color: #b71234; }

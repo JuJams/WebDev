@@ -1,3 +1,4 @@
+/* Contact page styles — soft colors and floating animations for a calm vibe */
 body {
     margin: 0;
     padding: 0;
@@ -8,12 +9,11 @@ body {
     background-position: center;
 }
 
-
-  
 html, body {
     overflow: hidden;
 
 }
+/* Top-left logo */
 .logo {
     position: absolute;
     top: 30px;
@@ -36,6 +36,7 @@ html, body {
     color: #FFC8DD;
   }
   
+  /* Navigation bar */
   .top-nav {
     position: absolute;
     top: 30px;
@@ -67,6 +68,7 @@ html, body {
     color: #ffffff;
   }
 
+/* Centered contact form */
 .contact-form-container {
   background-color: #f6eee3;
   position: absolute;
@@ -111,6 +113,7 @@ html, body {
   background-color: #67c8f8;
 }
 
+/* Background video */
 #bg-video {
   position: fixed;
   top: 0;
@@ -121,6 +124,7 @@ html, body {
   z-index: -1;
 }
 
+/* Floating bottle visuals */
 .bottle {
   position: absolute;
   width: 80px;
@@ -146,6 +150,7 @@ html, body {
   animation: float3 4s ease-in-out infinite;
 }
 
+/* Bottle animations */
 @keyframes float {
   0%, 100% {
     transform: translateY(10px);

@@ -1,4 +1,6 @@
+// Wait for the DOM to fully load before running the script
 document.addEventListener("DOMContentLoaded", () => {
+  // Each object in this array contains the ID of an element and the text that should be typed into it
   const typingData = [
     {
       elementId: "typedtext",
@@ -18,22 +20,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
+  // Loop through each item in the typingData array
   typingData.forEach(({ elementId, text }) => {
+    // Get the DOM element where the text should be typed
     const destination = document.getElementById(elementId);
     let i = 0;
-    const speed = 50;
+    const speed = 50; // Typing speed in milliseconds
 
+    // This function creates the typewriter effect
     function typeWriter() {
       if (i < text.length) {
-        destination.innerHTML += text.charAt(i) + '|';
+        // Add one character and a blinking cursor
+        destination.innerHTML += text.charAt(i) + '|'; 
         i++;
+        // Keep only one cursor by removing the last character before appending the next
         destination.innerHTML = destination.innerHTML.slice(0, -1); 
-        setTimeout(typeWriter, speed);
+        // Schedule the next character
+        setTimeout(typeWriter, speed); 
       } else {
+        // When done, display the full text without the cursor
         destination.innerHTML = text; 
       }
     }
 
-    typeWriter();
+    // Start the typing animation for this element
+    typeWriter(); 
   });
 });

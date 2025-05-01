@@ -32,6 +32,7 @@ body.dark .logo {
   color: #FFC8DD;
 }
 
+/* Navigation bar at top right */
 .top-nav {
   position: absolute;
   top: 30px;
@@ -63,12 +64,14 @@ body.dark .top-nav a {
   color: #ffffff;
 }
 
+/* Layout: 80% text area and 20% animation on right */
 .about-page {
   display: grid;
   grid-template-columns: 80% 20%;
   min-height: 100vh;
 }
 
+/* Grid of text boxes in the left section */
 .about-heading {
   display: grid;
   grid-template-columns: 400px 400px;
@@ -79,6 +82,7 @@ body.dark .top-nav a {
   height: auto;
 }
 
+/* Paragraph spacing inside boxes */
 .about-heading p {
   margin-top: 16px;
   font-size: 20px;
@@ -89,6 +93,7 @@ body.dark .top-nav a {
   margin-right: auto;
 }
 
+/* Animated Lottie figure container */
 .anime-illustration {
   background-color: #dbffcb;
   background-image: url('assets/yellow.png');
@@ -102,6 +107,7 @@ body.dark .top-nav a {
   height: 180px;
 }
 
+/* Style for each floating paragraph box */
 .about-box {
   width: 300px;
   height: 250px;
@@ -117,11 +123,12 @@ body.dark .top-nav a {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover effect lifts boxes slightly */
 .about-box:hover {
   transform: translateY(-8px);
 }
 
-
+/* Typing animation containers */
 #typedtext,
 #typedtext2,
 #typedtext3,
@@ -139,6 +146,7 @@ body.dark .top-nav a {
   white-space: pre-wrap;
 }
 
+/* Glowing hover effects by box color */
 .pink-box:hover {
   box-shadow: 0 0 30px 12px rgba(255, 200, 221, 0.6);
 }

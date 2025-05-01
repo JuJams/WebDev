@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.querySelector(".project-overlay");
   const overlayClose = document.querySelector(".overlay-close");
 
+  // When the coffee container is clicked, fade it out and show the spill area
   coffeeContainer.addEventListener("click", () => {
     coffeeContainer.classList.remove("fade-out", "fade-down");
     void coffeeContainer.offsetWidth;
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   });
 
+  // When the spill area is clicked, slide it out and bring back the coffee container
   spillArea.addEventListener("click", () => {
     spillArea.classList.remove("show");
     void spillArea.offsetWidth;
@@ -34,15 +36,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1000);
   });
 
+  // Add click listeners to each ice cube to show project overlay
   iceCubes.forEach((cube) => {
     cube.addEventListener("click", (e) => {
       e.stopPropagation();
 
+      // Fade out spill area when an ice cube is clicked
       spillArea.classList.add("fade-out");
       setTimeout(() => {
         spillArea.style.display = "none";
       }, 500);
 
+      // Hide other ice cubes except the clicked one
       iceCubes.forEach((ic) => {
         if (ic !== cube) {
           ic.style.display = "none";
@@ -57,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const projectVideo = document.getElementById("projectVideo");
 
       setTimeout(() => {
+        // Show the overlay with project details
         overlay.classList.remove("hidden");
         overlay.classList.add("show");
 
@@ -64,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         overlayCube.style.display = "block";
 
         if (projectTitle && projectText && projectVideo) {
+          // Populate project details from data attributes of the clicked cube
           projectTitle.textContent = cube.getAttribute("data-title") || "";
           projectText.innerHTML = cube.getAttribute("data-text") || "";
           const videoSource = projectVideo.querySelector("source");
@@ -77,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const overlayCube = document.getElementById("activeCube");
+  // Clicking the overlay cube closes the overlay and resets the spill area and ice cubes
   overlayCube.addEventListener("click", () => {
     overlay.classList.remove("show");
     overlay.classList.add("hidden");
@@ -97,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 500);
   });
 
+  // Clicking the overlay close button also closes the overlay and resets the UI
   overlayClose.addEventListener("click", () => {
     overlay.classList.remove("show");
     overlay.classList.add("hidden");
@@ -120,6 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 500);
   });
 
+  // Animate the overlay hint text by wrapping each character in a span with staggered animation delay
   const hint = document.querySelector(".overlay-hint");
   if (hint) {
     const text = hint.textContent.trim();

@@ -4,17 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="about.css" />
+
+  <!-- Lottie for animated illustration -->
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
+  <!-- Serif font for classic headers -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
 </head>
+
 <body class="light">
+  <!-- Logo name (click to return to landing page) -->
   <a href="landing.html" class="logo">Sanjana</a>
 
+  <!-- Main navigation -->
   <nav class="top-nav">
     <a href="about.html" class="active">About Me</a>
     <a href="skills.html">Skills</a>
@@ -22,6 +28,7 @@
     <a href="contact.html">Contact</a>
   </nav>
 
+  <!-- About section with four floating text boxes -->
   <section class="about-page">
     <div class="about-heading">
       <div class="about-box pink-box">
@@ -38,6 +45,7 @@
       </div>
     </div>
     
+    <!-- Animated character on the center right -->
     <div class="anime-illustration">
       <lottie-player
         src="./assets/me.json"
@@ -49,6 +57,8 @@
       </lottie-player>
     </div>
   </section>
+
+  <!-- JS file adds typewriter animation -->
   <script src="about.js"></script>
 </body>
 </html>

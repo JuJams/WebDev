@@ -4,22 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Skills</title>
+
+  <!-- Fonts used for headings and logo styling -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="contact.css" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body class="contact-page">
+
+  <!-- Background looping ocean video -->
   <video autoplay muted loop id="bg-video">
     <source src="assets/waves.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
+
+  <!-- Floating bottles used for visual decoration -->
   <img src="assets/bottle.png" alt="Bottle" class="bottle bottle1">
   <img src="assets/bottle.png" alt="Bottle" class="bottle bottle2">
   <img src="assets/bottle.png" alt="Bottle" class="bottle bottle3">
+
+  <!-- Site logo that links to landing page -->
   <a href="landing.html" class="logo">Sanjana</a>
+
+  <!-- Navigation links for all site pages -->
   <nav class="top-nav">
     <a href="about.html">About Me</a>
     <a href="skills.html">Skills</a>
@@ -27,6 +36,7 @@
     <a href="contact.html" class="active">Contact</a>
   </nav>
 
+  <!-- Contact form that submits to Formspree (https://formspree.io) -->
   <div class="contact-form-container">
     <form action="https://formspree.io/f/meogewel" method="POST">
       <label for="name">Name:</label>

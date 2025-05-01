@@ -4,14 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Skills</title>
+
+  <!-- Google Fonts and CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="projects.css" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
 </head>
+
 <body>
+  <!-- Logo and navigation bar -->
   <a href="landing.html" class="logo">Sanjana</a>
 
   <nav class="top-nav">
@@ -21,16 +24,25 @@
       <a href="contact.html">Contact</a>
   </nav>
 
+  <!-- Coffee cup appears first and triggers interaction -->
   <div class="coffee-cup-container">
     <img src="./assets/coffee.png" alt="Coffee Cup" id="coffee-cup">
   </div>
 
+  <!-- Hidden section that appears after coffee cup is clicked -->
   <div class="spill-area hidden">
+    <!-- Hint to guide the user -->
     <div class="hint-text">
       click on spill to unspill or click an ice cube to explore!
     </div>
+
+    <!-- Coffee spill image -->
     <img src="./assets/spill.png" alt="Coffee Spill" id="spill" class="spill-img">
+
+    <!-- Ice cubes placed over the spill, each linked to a different project -->
     <div class="ice-cubes">
+
+      <!-- Project 1: Groupr -->
       <img src="./assets/iceCube.png" class="ice-cube one" alt="Ice Cube 1"
            data-title="Groupr"
            data-text="<h4>Overview</h4>
@@ -47,6 +59,7 @@
           <p>This was one of the first times I saw how design and development work together in the real world. It made me care a lot more about how things feel — not just how they work. Groupr taught me how to build with empathy and think about the people on the other side of the screen.</p>"
            data-video="./assets/groupr.mp4">
 
+      <!-- Project 2: To-Do List App -->
       <img src="./assets/iceCube.png" class="ice-cube two" alt="Ice Cube 2"
            data-title="To-Do List App"
            data-text="<h4>What It Is</h4>
@@ -62,6 +75,7 @@
           <p>This project helped me understand how backend systems manage and secure data while delivering quick, responsive experiences. I learned how to design simple yet reliable backend flows and realized the importance of organizing backend logic cleanly — even for small tools. It also gave me ideas for how even basic utilities can be made smarter over time.</p>"
            data-video="./assets/augmentedLibrary.mp4">
 
+      <!-- Project 3: Augmented Library -->
       <img src="./assets/iceCube.png" class="ice-cube three" alt="Ice Cube 3"
            data-title="Augmented Library"
            data-text="<h4>What It Is</h4>
@@ -78,21 +92,30 @@
            data-video="./assets/augmentedLibrary.mp4">
     </div>
   </div>
-</div>
+
+  <!-- This overlay appears when a cube is clicked -->
   <div class="project-overlay hidden">
+    <!-- Ice cube icon in the overlay acts as a close button -->
     <img id="activeCube" src="./assets/iceCube.png" class="ice-cube overlay-close" alt="Back">
+
+    <!-- Project text content shown dynamically -->
     <div class="project-text">
       <h2 class="project-title" id="projectTitle"></h2>
       <p class="project-description" id="projectText"></p>
     </div>
+
+    <!-- Project video displayed beside the text -->
     <div class="project-media">
       <video id="projectVideo" autoplay loop muted>
         <source src="" type="video/mp4">
         Your browser does not support the video tag.
       </video>
+      <!-- Tip text under the video -->
       <p class="overlay-hint">click on the ice cube to go back to the spill</p>
     </div>
   </div>
+
+  <!-- Script file to manage interactivity -->
   <script src="projects.js"></script>
 </body>
 </html>

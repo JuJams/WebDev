@@ -10,6 +10,8 @@ html, body {
     overflow-x: hidden;
     overflow-y: auto;
 }
+
+/* Top-left logo */
 .logo {
     position: absolute;
     top: 30px;
@@ -23,16 +25,15 @@ html, body {
     cursor: pointer;
     text-decoration: none;
 }
-  
-  .logo:hover {
+.logo:hover {
     color: #0199ff;
-  }
-  
-  body.dark .logo {
+}
+body.dark .logo {
     color: #FFC8DD;
-  }
-  
-  .top-nav {
+}
+
+/* Nav bar links (top right) */
+.top-nav {
     position: absolute;
     top: 30px;
     right: 40px;
@@ -40,29 +41,26 @@ html, body {
     display: flex;
     gap: 24px;
     z-index: 10;
-  }
-  
-  .top-nav a {
+}
+.top-nav a {
     color: #161411;
     text-decoration: none;
     font-weight: 500;
     font-size: 16px;
     transition: border-bottom 0.2s ease;
     border-bottom: 2px solid transparent;
-  }
-  
-  .top-nav a.active {
+}
+.top-nav a.active {
     border-bottom: 2px solid currentColor;
-  }
-  
-  .top-nav a:hover {
+}
+.top-nav a:hover {
     border-bottom: 2px solid currentColor;
-  }
-  
-  body.dark .top-nav a {
+}
+body.dark .top-nav a {
     color: #ffffff;
-  }
+}
 
+/* Coffee cup (center start animation) */
 .coffee-cup-container {
   position: absolute;
   top: 50%;
@@ -73,20 +71,18 @@ html, body {
   z-index: 5;
   cursor: pointer;
 }
-
 .coffee-cup-container.fade-out {
   animation: fadeUp 1s forwards ease-in-out;
 }
-
 .coffee-cup-container img {
   width: 100%;
   height: auto;
 }
-
 .coffee-cup-container:hover {
   transform: translate(-50%, -50%) rotate(8deg) scale(1.05);
 }
 
+/* Spill section that fades in after coffee cup is clicked */
 .spill-area {
   position: absolute;
   top: 50%;
@@ -96,87 +92,51 @@ html, body {
   transition: transform 0.5s ease;
   z-index: 5;
   cursor: pointer;
-  animation: none;
   transform-origin: center;
   opacity: -0.3;
 }
-
 .spill-area.hidden {
   opacity: 0;
   transform: translate(50%, 100%) scale(0.5);
   pointer-events: none;
 }
-
 .spill-area.show {
   animation: slideIn 1s forwards ease-in-out, spillFloat 6s ease-in-out 1s infinite;
 }
 
-
+/* Coffee spill image */
 .spill-img {
   width: 100%;
   height: auto;
 }
 
+/* Fade and slide animations — Source: MDN Web Docs keyframes reference */
 @keyframes fadeUp {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, -50%) rotate(0deg) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -150%) rotate(-10deg) scale(0.8);
-  }
+  0% { opacity: 1; transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -150%) rotate(-10deg) scale(0.8); }
 }
-
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 100%) scale(0.5);
-  }
-  50% {
-    opacity: 0.5;
-    transform: translate(-50%, 25%) scale(0.75);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-
-@keyframes slideOut {
-  0% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    opacity: 0.5;
-    transform: translate(-50%, 25%) scale(0.75);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, 100%) scale(0.5);
-  }
-}
-
 @keyframes fadeDown {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -150%) rotate(-10deg) scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%) rotate(0deg) scale(1);
-  }
+  0% { opacity: 0; transform: translate(-50%, -150%) rotate(-10deg) scale(0.8); }
+  100% { opacity: 1; transform: translate(-50%, -50%) rotate(0deg) scale(1); }
 }
-
+@keyframes slideIn {
+  0% { opacity: 0; transform: translate(-50%, 100%) scale(0.5); }
+  50% { opacity: 0.5; transform: translate(-50%, 25%) scale(0.75); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+@keyframes slideOut {
+  0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.5; transform: translate(-50%, 25%) scale(0.75); }
+  100% { opacity: 0; transform: translate(-50%, 100%) scale(0.5); }
+}
 .spill-area.slide-out {
   animation: slideOut 1s forwards ease-in-out;
 }
-
 .coffee-cup-container.fade-down {
   animation: fadeDown 1s forwards ease-in-out;
 }
 
+/* Ice cube layout inside the spill */
 .ice-cubes {
   position: absolute;
   top: 50%;
@@ -186,7 +146,6 @@ html, body {
   height: 600px;
   z-index: 6;
 }
-
 .ice-cube {
   position: absolute;
   width: 80px;
@@ -196,55 +155,46 @@ html, body {
   animation: float 4s ease-in-out infinite;
   filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.9));
 }
-
 .ice-cube:hover {
   animation: floatSpin 4s linear infinite;
   filter: drop-shadow(0 0 18px rgba(255, 255, 255, 1));
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-.one {
-  top: 50%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-}
+/* Ice cube specific positions */
+.one { top: 50%; left: 30%; transform: translate(-50%, -50%); }
+.two { top: 60%; left: 70%; transform: translate(-50%, -50%); }
+.three { top: 70%; left: 50%; transform: translate(-50%, -50%); }
 
-.two {
-  top: 60%;
-  left: 70%;
-  transform: translate(-50%, -50%);
-}
-
-.three {
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
+/* Floating animation for ice cubes — Source: https://css-tricks.com/snippets/css/keyframe-animation-syntax/ */
 @keyframes float {
-  0% {
-    transform: translate(-50%, -50%) translateY(0px);
-  }
-  50% {
-    transform: translate(-50%, -50%) translateY(-10px);
-  }
-  100% {
-    transform: translate(-50%, -50%) translateY(0px);
-  }
+  0%   { transform: translate(-50%, -50%) translateY(0px); }
+  50%  { transform: translate(-50%, -50%) translateY(-10px); }
+  100% { transform: translate(-50%, -50%) translateY(0px); }
 }
 
+/* Spill gently floating — subtle animation */
 @keyframes spillFloat {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    transform: translate(-50%, -52%) scale(1.02);
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
+  0%   { transform: translate(-50%, -50%) scale(1); }
+  50%  { transform: translate(-50%, -52%) scale(1.02); }
+  100% { transform: translate(-50%, -50%) scale(1); }
 }
 
+/* Floating + spinning cube animation */
+@keyframes floatSpin {
+  0%   { transform: translate(-50%, -50%) rotate(0deg) translateY(0px); }
+  50%  { transform: translate(-50%, -50%) rotate(180deg) translateY(-10px); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) translateY(0px); }
+}
+@keyframes spin {
+  0%   { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+.ice-cube.spin {
+  animation: spin 4s linear infinite;
+}
+
+/* Hint text styling */
 .hint-text {
   position: absolute;
   top: 74%;
@@ -259,31 +209,7 @@ html, body {
   text-align: center;
 }
 
-@keyframes spin {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
-@keyframes floatSpin {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg) translateY(0px);
-  }
-  50% {
-    transform: translate(-50%, -50%) rotate(180deg) translateY(-10px);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg) translateY(0px);
-  }
-}
-
-.ice-cube.spin {
-  animation: spin 4s linear infinite;
-}
-
+/* Overlay for selected project */
 .project-overlay {
   position: fixed;
   top: 100px;
@@ -303,13 +229,13 @@ html, body {
   border-radius: 40px;
   box-sizing: border-box;
 }
-
 .project-overlay.show {
   opacity: 1;
   pointer-events: auto;
   transform: scale(1);
 }
 
+/* Layout for the overlay content */
 .overlay-content {
   position: relative;
   width: 100%;
@@ -320,25 +246,19 @@ html, body {
   overflow: hidden;
 }
 
-.overlay-close {
+/* Close button (ice cube) in overlay */
+#activeCube {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 50px;
+  top: 20px;
+  left: 20px;
+  width: 60px;
+  height: auto;
+  z-index: 101;
   cursor: pointer;
+  display: block;
 }
 
-.project-title {
-  font-family: 'DM Serif Text', cursive;
-  font-style: italic;
-  font-size: 36px;
-  font-weight: 400;
-  color: #E36414;
-  text-align: center;
-  margin-bottom: 16px;
-}
-
-
+/* Project text side */
 .project-text {
   flex: 1;
   background-color: #000000;
@@ -352,7 +272,26 @@ html, body {
   scrollbar-width: thin;
   scrollbar-color: #ccc #111;
 }
+.project-title {
+  font-family: 'DM Serif Text', cursive;
+  font-style: italic;
+  font-size: 36px;
+  font-weight: 400;
+  color: #E36414;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.project-text h4 {
+  margin-top: 24px;
+  font-size: 18px;
+  color: #EDF2FB;
+}
+.project-text p {
+  margin-bottom: 16px;
+  color: #ccc;
+}
 
+/* Project video side */
 .project-media {
   flex: 1;
   display: flex;
@@ -372,36 +311,7 @@ html, body {
   border-radius: 12px;
 }
 
-.project-description {
-  overflow-y: auto;
-  height: 100%;
-  padding-right: 8px;
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-#activeCube {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 60px;
-  height: auto;
-  z-index: 101;
-  cursor: pointer;
-  display: block;
-}
-
-.project-text h4 {
-  margin-top: 24px;
-  font-size: 18px;
-  color: #EDF2FB;
-}
-
-.project-text p {
-  margin-bottom: 16px;
-  color: #ccc;
-}
+/* Footer message in overlay */
 .overlay-hint {
   margin-top: 16px;
   font-family: monospace, cursive;
@@ -414,17 +324,13 @@ html, body {
   justify-content: center;
   white-space: pre-wrap;
 }
-
 .overlay-hint span {
   display: inline-block;
   animation: wave 1.4s ease-in-out infinite;
 }
 
+/* Wavy up/down animation — source: css-tricks.com */
 @keyframes wave {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
