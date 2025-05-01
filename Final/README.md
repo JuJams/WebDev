@@ -14,6 +14,8 @@ This is a creative and interactive personal portfolio website built from scratch
 
 ## Screenshot / Screen Recording
 
+https://github.com/user-attachments/assets/663f1d90-65bc-4df8-be83-7ed3cc4c41e6
+
 
 ## 💡 Code Snippet I'm Proud Of
 
