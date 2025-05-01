@@ -12,7 +12,7 @@ This is a creative and interactive personal portfolio website built from scratch
 - **Projects page** uses clickable ice cubes that "spill" into project overlays.
 - **Contact page** features a floating bottle animation over a looping waves video background.
 
-## Screenshot / Screen Recording
+## Screen Recording
 
 https://github.com/user-attachments/assets/663f1d90-65bc-4df8-be83-7ed3cc4c41e6
 
